@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Hello world!</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <!-- this is the start of content -->
+    <h1>
+      Sounds Like Light Memorization To Me!
+    </h1>
+    
+    <p>
+      Hi! Welcome to Janani Sriram's light and sound memory game :) Repeat back the pattern you see by pressing buttons in order. Answer every round correctly to win!
+    </p>
+    
+    <p>
+      For more information about the game, check out this video: 
+      <a href="https://www.youtube.com/watch?v=Zd_rLsJGtts"
+        >Light and Sound Memory Game</a
+      >.
+    </p>
+    
+    <div id="textBoxes">
+      <!-- input easy or hard mode -->
+      <div id="modeLevel">
+        <input id="levelBox" type="text" placeholder="easy or hard mode">
+      </div>
+
+      <!-- input length of random pattern -->
+      <div id="inputPattern">
+        <input id="patternLengthValue" type="text" placeholder="pattern length">
+      </div>
+    </div>
+    
+    <button id="startBtn" onclick="setMode(); randomPattern(); startGame()">
+      Start
+    </button>
+    <button id="stopBtn" class="hidden" onclick="stopGame()">
+      Stop
+    </button>
+    
+    <p>
+      Time left on guess: 
+    </p>
+    <p id="timeLeftOnGuess">
+      
+    </p>
+    
+    <p>
+      Incorrect guesses left: 
+    </p>
+    <p id="incorrectGuessesLeft">
+      
+    </p>
+    
+    <div id="gameButtonArea">
+      <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"></button>
+      <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
+      <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
+      <button id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"></button>
+      <button id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()"></button>
+      <button id="button6" onclick="guess(6)" onmousedown="startTone(6)" onmouseup="stopTone()"></button>
+    </div>
+  </body>
+</html>
