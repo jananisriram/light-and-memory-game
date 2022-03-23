@@ -38,6 +38,20 @@ function startGame() {
 
   // play clues
   playClueSequence();
+  
+  // start timer
+  secsLeft = 5;
+  timerFunc = setInterval(function() {
+    if (secsLeft <= 0) {
+      clearInterval(timerFunc);
+      document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
+      loseGame();
+    }
+    else {
+      document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
+      secsLeft -= 1;
+    }
+  }, 1000);
 }
 
 // stop game
@@ -131,45 +145,44 @@ function playClueSequence(){
   }
   
   
-  if (guessCounter == 0 && playGame == true) {
-    //secsLeft = 5;
+//   if (guessCounter == 0 && playGame == true) {
+//     //secsLeft = 5;
   
-    console.log("hi 1");
+//     console.log("hi 1");
     
-    timerFunc = setInterval(function() {
-      if (secsLeft < 0) {
-        clearInterval(timerFunc);
-        document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
-        
-        // problem: does not work with alerts (loseGame())
-        
-      } else {
-        console.log("hi 2");
+//  }
+  
+//   timerFunc = setInterval(function() {
+//       console.log(secsLeft);
+//       console.log("hi 2");
+//       alert("hi")
       
-        if (secsLeft == 1) {
-          document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " second";
-        } else {
-          document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
-        }
+//         if (secsLeft == 1) {
+//           document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " second";
+//         } else {
+//           document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
+//         }
 
-        if (secsLeft < 0) {
-          clearInterval(timerFunc);
-          document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
-          guessCounter++;
-          playGame = false;
-          console.log("hi 3");
-          loseGame();
-          //secsLeft = 0;
+//         if (secsLeft < 0) {
+//           clearInterval(timerFunc);
+//           document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
+//           guessCounter++;
+//           playGame = false;
+//           console.log("hi 3");
+//           loseGame();
+//           //secsLeft = 0;
 
-        } else {
-          secsLeft--;
-        }
-      }
+//         } else {
+//           secsLeft--;
+          
+//         }
       
       
       
-    }, 1000);
- }
+//     }, 1000);
+  
+  
+  
   
   
   
@@ -177,6 +190,7 @@ function playClueSequence(){
 
 // player loses
 function loseGame() {
+  clearInterval(timerFunc);
   stopGame();
   alert("Game Over. You lost.");
   console.log("game over");
@@ -184,6 +198,7 @@ function loseGame() {
 
 // player wins
 function winGame() {
+  clearInterval(timerFunc);
   stopGame();
   alert("Congrats! You won :)");
 }
@@ -197,9 +212,6 @@ function guess(btn) {
   //timerFunc;
   
   
-  
-  
-  
   // validation
   if (btn != pattern[guessCounter]) {
     // totalMistakes guesses incorrect --> lose
@@ -211,7 +223,9 @@ function guess(btn) {
       mistakesLeft--;
       document.getElementById("incorrectGuessesLeft").innerHTML = mistakesLeft;
       progress++;
+      secsLeft = 5;
       playClueSequence();
+      
     }
   } else {
     // guess correct
@@ -224,6 +238,19 @@ function guess(btn) {
         // not last turn
         progress++;
         playClueSequence();
+        secsLeft = 5;
+        // // start timer again
+        // timerFunc = setInterval(function() {
+        //   if (secsLeft <= 0) {
+        //     clearInterval(timerFunc);
+        //     document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
+        //     loseGame();
+        //   }
+        //   else {
+        //     document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
+        //     secsLeft -= 1;
+        //   }
+        // }, 1000);
       } else {
         // last turn + turn over + guess correct --> win
         winGame();
@@ -251,3 +278,28 @@ function setMode() {
     cluePauseTime = 100;
   }
 }
+
+// create timer
+// function setTimer() {
+//   // timerFunc = setInterval(function() {
+//   //   if (secsLeft <= 0) {
+//   //     clearInterval(timerFunc);
+//   //     document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
+//   //     loseGame();
+//   //   }
+//   //   else {
+//   //     document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
+//   //     secsLeft -= 1;
+//   //   }
+//   // }, 1000);
+  
+//   if (secsLeft <= 0) {
+//     clearInterval(timerFunc);
+//     document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
+//     loseGame();
+//   }
+//   else {
+//     document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
+//     secsLeft -= 1;
+//   }
+// }
