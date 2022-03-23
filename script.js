@@ -2,6 +2,7 @@
 //const clueHoldTime = 1000; //how long to hold each clue's light/sound (in ms)
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 const totalMistakes = 3;
+const secsAllowed = 10;
 
 // global variables
 var pattern = [];
@@ -17,7 +18,7 @@ var playGame = true;
 
 // create timer
 var timerFunc;
-var secsLeft = 5;
+var secsLeft = secsAllowed;
 
 // start game
 function startGame() {
@@ -26,7 +27,7 @@ function startGame() {
   gamePlaying = true;
   mistakesLeft = totalMistakes;
   document.getElementById("incorrectGuessesLeft").innerHTML = mistakesLeft;
-  secsLeft = 5;
+  secsLeft = secsAllowed;
   document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + "seconds";
   
   // set random pattern
@@ -40,7 +41,7 @@ function startGame() {
   playClueSequence();
   
   // start timer
-  secsLeft = 5;
+  secsLeft = secsAllowed;
   timerFunc = setInterval(function() {
     if (secsLeft <= 0) {
       clearInterval(timerFunc);
@@ -143,49 +144,6 @@ function playClueSequence(){
       clueHoldTime -= 25;
     }
   }
-  
-  
-//   if (guessCounter == 0 && playGame == true) {
-//     //secsLeft = 5;
-  
-//     console.log("hi 1");
-    
-//  }
-  
-//   timerFunc = setInterval(function() {
-//       console.log(secsLeft);
-//       console.log("hi 2");
-//       alert("hi")
-      
-//         if (secsLeft == 1) {
-//           document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " second";
-//         } else {
-//           document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
-//         }
-
-//         if (secsLeft < 0) {
-//           clearInterval(timerFunc);
-//           document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
-//           guessCounter++;
-//           playGame = false;
-//           console.log("hi 3");
-//           loseGame();
-//           //secsLeft = 0;
-
-//         } else {
-//           secsLeft--;
-          
-//         }
-      
-      
-      
-//     }, 1000);
-  
-  
-  
-  
-  
-  
 }
 
 // player loses
@@ -209,10 +167,7 @@ function guess(btn) {
   if(!gamePlaying){
     return;
   }
-  //timerFunc;
   
-  
-  // validation
   if (btn != pattern[guessCounter]) {
     // totalMistakes guesses incorrect --> lose
     if (mistakesLeft == 1) {
@@ -223,7 +178,7 @@ function guess(btn) {
       mistakesLeft--;
       document.getElementById("incorrectGuessesLeft").innerHTML = mistakesLeft;
       progress++;
-      secsLeft = 5;
+      secsLeft = secsAllowed;
       playClueSequence();
       
     }
@@ -238,19 +193,7 @@ function guess(btn) {
         // not last turn
         progress++;
         playClueSequence();
-        secsLeft = 5;
-        // // start timer again
-        // timerFunc = setInterval(function() {
-        //   if (secsLeft <= 0) {
-        //     clearInterval(timerFunc);
-        //     document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
-        //     loseGame();
-        //   }
-        //   else {
-        //     document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
-        //     secsLeft -= 1;
-        //   }
-        // }, 1000);
+        secsLeft = secsAllowed;
       } else {
         // last turn + turn over + guess correct --> win
         winGame();
@@ -278,28 +221,3 @@ function setMode() {
     cluePauseTime = 100;
   }
 }
-
-// create timer
-// function setTimer() {
-//   // timerFunc = setInterval(function() {
-//   //   if (secsLeft <= 0) {
-//   //     clearInterval(timerFunc);
-//   //     document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
-//   //     loseGame();
-//   //   }
-//   //   else {
-//   //     document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
-//   //     secsLeft -= 1;
-//   //   }
-//   // }, 1000);
-  
-//   if (secsLeft <= 0) {
-//     clearInterval(timerFunc);
-//     document.getElementById("timeLeftOnGuess").innerHTML = "Time's Up!";
-//     loseGame();
-//   }
-//   else {
-//     document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
-//     secsLeft -= 1;
-//   }
-// }

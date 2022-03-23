@@ -73,27 +73,34 @@ button {
 
 /* clicked button properties */
 #button1:active, #button1.lit {
-  background: green;
+  background: url('https://www.musictheoryacademy.com/wp-content/uploads/2020/06/Treble-Clef-Notes-Quiz-C.jpg');
+  background-size: contain;
 }
 
 #button2:active, #button2.lit {
-  background: blue;
+  background: url('https://www.doremistudios.com.au/wp-content/uploads/2017/02/Dsharp.png');
+  background-size: contain;
+  background-color: white;
 }
 
 #button3:active, #button3.lit {
-  background: red;
+  background: url('https://www.musictheoryacademy.com/wp-content/uploads/2020/06/Treble-Clef-Notes-Quiz-G.jpg');
+  background-size: contain;
 }
 
 #button4:active, #button4.lit {
-  background: yellow;
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpkMTkvGqarU98fpPleg-vFVbFmFhgsDk0BfEeQ55DnsJkbzWQ2hdIZpoRQByBttZeaic&usqp=CAU');
+  background-size: contain;
 }
 
 #button5:active, #button5.lit {
-  background: #ff7f0f;
+  background: url('https://media.istockphoto.com/vectors/black-music-treble-clef-with-note-b-or-si-on-staff-lines-vector-id1186531196?k=20&m=1186531196&s=170667a&w=0&h=DRTlTzcfhxc09bUL5hOJoHNyjdbHDHlmyEnd5YnziTU=');
+  background-size: contain;
 }
 
 #button6:active, #button6.lit {
-  background: #ba4aff;
+  background: url('https://www.pianotheoryexercises.com/wp-content/uploads/2017/09/The-note-D-on-staff-1.png');
+  background-size: contain;
 }
 
 /* images and videos max out at full width */
