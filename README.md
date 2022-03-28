@@ -12,30 +12,30 @@ Link to project: https://glitch.com/edit/#!/janani-sriram-light-and-sound-memory
 
 The following **required** functionality is complete:
 
-* [yes] Game interface has a heading (h1 tag), a line of body text (p tag), and four buttons that match the demo app
-* [yes] "Start" button toggles between "Start" and "Stop" when clicked. 
-* [yes] Game buttons each light up and play a sound when clicked. 
-* [yes] Computer plays back sequence of clues including sound and visual cue for each button
-* [yes] Play progresses to the next turn (the user gets the next step in the pattern) after a correct guess. 
-* [yes] User wins the game after guessing a complete pattern
-* [yes] User loses the game after an incorrect guess
+* [x] Game interface has a heading (h1 tag), a line of body text (p tag), and four buttons that match the demo app
+* [x] "Start" button toggles between "Start" and "Stop" when clicked. 
+* [x] Game buttons each light up and play a sound when clicked. 
+* [x] Computer plays back sequence of clues including sound and visual cue for each button
+* [x] Play progresses to the next turn (the user gets the next step in the pattern) after a correct guess. 
+* [x] User wins the game after guessing a complete pattern
+* [x] User loses the game after an incorrect guess
 
 The following **optional** features are implemented:
 
-* [yes] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
-* [yes] Buttons use a pitch (frequency) other than the ones in the tutorial
-* [yes] More than 4 functional game buttons
-* [yes] Playback speeds up on each turn
-* [yes] Computer picks a different pattern each time the game is played
-* [yes] Player only loses after 3 mistakes (instead of on the first mistake)
-* [yes] Game button appearance change goes beyond color (e.g. add an image)
+* [x] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+* [x] Buttons use a pitch (frequency) other than the ones in the tutorial
+* [x] More than 4 functional game buttons
+* [x] Playback speeds up on each turn
+* [x] Computer picks a different pattern each time the game is played
+* [x] Player only loses after 3 mistakes (instead of on the first mistake)
+* [x] Game button appearance change goes beyond color (e.g. add an image)
 * [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
-* [yes] User has a limited amount of time to enter their guess on each turn
+* [x] User has a limited amount of time to enter their guess on each turn
 
 The following **additional** features are implemented:
 
-- [yes] Player can pick easy or hard mode using text box input, which affects tone play time and time between played tones
-- [yes] Player can enter desired pattern length using text box input, generating a random pattern of that length
+- [x] Player can pick easy or hard mode using text box input, which affects tone play time and time between played tones
+- [x] Player can enter desired pattern length using text box input, generating a random pattern of that length
 
 ## Video Walkthrough (GIF)
 
@@ -47,7 +47,16 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-[YOUR ANSWER HERE]
+    - [x] https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
+    - [x] https://www.w3schools.com/css//css_font_websafe.asp
+    - [x] https://www.the-art-of-web.com/javascript/creating-sounds/
+    - [x] https://pages.mtu.edu/~suits/notefreqs.html
+    - [x] https://www.quora.com/What-is-the-way-set-default-text-inside-textbox-in-HTML
+    - [x] http://www.learningaboutelectronics.com/Articles/How-to-retrieve-data-from-a-text-box-in-javascript.php#:~:text=To%20extract%20the%20information%20which,entered%20into%20this%20text%20box.
+    - [x] https://www.w3schools.com/jsref/jsref_floor.asp
+    - [x] https://www.w3schools.com/jsref/jsref_push.asp
+    - [x] https://stackoverflow.com/questions/14845710/javascript-variable-access-in-html
+    - [x] https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
 [YOUR ANSWER HERE]
@@ -67,7 +76,7 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
 ## License
 
-    Copyright [YOUR NAME]
+    Copyright Janani Sriram, 2022
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
