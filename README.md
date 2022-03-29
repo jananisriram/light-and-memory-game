@@ -40,10 +40,10 @@ The following **additional** features are implemented:
 ## Video Walkthrough (GIF)
 
 If you recorded multiple GIFs for all the implemented features, you can add them here:
-![](gif1-link-here)
-![](gif2-link-here)
-![](gif3-link-here)
-![](gif4-link-here)
+[x] Hard Mode, Win: https://user-images.githubusercontent.com/34949059/160547581-99e57236-9d77-4665-9531-86bd771a5fca.gif
+[x] Easy Mode, Loss (Incorrect Guesses): https://user-images.githubusercontent.com/34949059/160547800-cdb5c728-a90e-4848-97f6-868b3ad964d5.gif
+[x] Hard Mode, Loss (Time Runs Out): https://user-images.githubusercontent.com/34949059/160547863-953adade-29e2-4e37-bb43-e36db0870148.gif
+[x] Hard and Easy Mode, Stop (Resets Game): https://user-images.githubusercontent.com/34949059/160547916-b584f629-403b-4fee-aaf5-41da53672c93.gif
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
