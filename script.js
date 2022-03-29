@@ -28,7 +28,7 @@ function startGame() {
   mistakesLeft = totalMistakes;
   document.getElementById("incorrectGuessesLeft").innerHTML = mistakesLeft;
   secsLeft = secsAllowed;
-  document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + "seconds";
+  document.getElementById("timeLeftOnGuess").innerHTML = secsLeft + " seconds";
   
   // set random pattern
   randomPattern();
@@ -72,7 +72,14 @@ const freqMap = {
   3: 392, // G4
   4: 440, // A4
   5: 493.88,	// B4
-  6: 587.33 // D5
+  6: 587.33, // D5
+  
+  1.5: 392,
+  2.5: 466.66,
+  3.5: 587.33,
+  4.5: 659.25,
+  5.5: 739.99,
+  6.5: 880
 }
 
 function playTone(btn,len){ 
